@@ -235,6 +235,19 @@ python -m pytest -v
 
 The current test suite contains four passing tests.
 
+## Continuous Integration
+
+A Continuous Integration workflow is implemented using GitHub Actions.
+
+On every push or pull request to the `main` branch, the workflow automatically:
+
+- Sets up the Python environment.
+- Installs project dependencies.
+- Trains the machine learning model.
+- Runs the automated test suite.
+
+This ensures that the project remains reproducible and that code changes do not break the existing pipeline.
+
 ## Docker
 
 The prediction API is containerized using Docker to provide a reproducible runtime environment.
@@ -268,7 +281,7 @@ A `.dockerignore` file is used to exclude development artifacts such as the virt
 ### 1. Clone the repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/FatimaZahraAABOUCH/customer-churn-mlops.git
 cd customer-churn-mlops
 ```
 
@@ -351,7 +364,6 @@ docker run --rm -p 8000:8000 customer-churn-api
 
 Potential improvements include:
 
-- Continuous Integration with GitHub Actions
 - Cloud deployment of the prediction API
 - Model and data monitoring
 - Experiment tracking and model versioning
