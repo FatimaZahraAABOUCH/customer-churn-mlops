@@ -1,3 +1,4 @@
+import os
 import joblib
 import pandas as pd
 
@@ -58,6 +59,7 @@ if __name__ == "__main__":
     )
 
     model = train_model(x_train, y_train)
+    os.makedirs("models", exist_ok=True)
     joblib.dump(
         model,
         "models/churn_model.joblib"
